@@ -6,25 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sewa Ruang</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
-
-
     <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
     <!--Replace with your tailwind.css once created-->
-
     <!-- fontawesome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Regular Datatables CSS-->
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--Responsive Extension Datatables CSS-->
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@12.11.5/dist/sweetalert2.min.css">
     <style>
         @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
@@ -108,7 +104,7 @@
         }
 
         .btn-base:hover::after {
-            background: var(--main-color);
+            /* background: var(--main-color); */
         }
 
         .btn-border {
@@ -199,13 +195,6 @@
             visibility: visible;
             opacity: 1;
             transform: scale(1.05);
-        }
-
-        .cm-soon-title {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
         }
 
         .inner-item:hover .cm-soon-title {
@@ -318,23 +307,7 @@
             }
         }
 
-        .featured-item {
-            box-shadow: 0 0 40px rgb(82 85 90 / 10%);
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 40px 20px 35px 20px;
-            background: #fff;
-            border-radius: 5px;
-            color: #1d1d1d;
-            font-size: 22px;
-        }
 
-        .featured-item img {
-            display: block;
-            margin: 0 auto 20px;
-            box-shadow: 0 0 40px rgb(82 85 90 / 20%);
-            border-radius: 5px;
-        }
 
         h1 {
             font-size: 62px;
@@ -383,24 +356,6 @@
             margin-bottom: 10px;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: 0.4s;
-        }
-
-        a,
-        a:hover,
-        a:focus,
-        a:active {
-            text-decoration: none;
-            outline: none;
-            color: inherit;
-        }
-
-        a:hover {
-            color: var(--main-color);
-        }
 
 
         /*---------------------------------------
@@ -471,28 +426,6 @@
             color: #fff;
             background: var(--main-color);
             border: 2px solid var(--main-color);
-        }
-
-        .btn-border-black {
-            color: var(--heading-color);
-            border: 2px solid rgba(0, 33, 71, 0.2);
-            line-height: 52px;
-        }
-
-        .btn-border-black:hover,
-        .btn-border-black:focus {
-            color: var(--heading-color);
-            background: var(--main-color);
-            border: 2px solid var(--main-color);
-        }
-
-        .btn-black {
-            color: #fff;
-            background: var(--heading-color);
-        }
-
-        .btn-black:hover {
-            color: #fff;
         }
 
         .btn-counter {
@@ -891,7 +824,36 @@
 
         .container-table {
             box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-            padding: 20px 10px 10px 10px ;
+            padding: 20px 10px 10px 10px;
+        }
+
+
+        tbody {
+            text-align: left;
+        }
+
+        .option-select {
+            font-size: 12px;
+        }
+
+        .td {
+            padding-right: none;
+            display: flex;
+            justify-content: left;
+        }
+
+
+
+        th {
+            /* display: none; */
+            width: 20%;
+        }
+
+        td {
+            /* display: grid;
+                gap: 0.5rem;
+                grid-template-columns: 15ch auto;
+                padding: 0.75em 1rem; */
         }
     </style>
 
@@ -899,7 +861,7 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-<?php $this->load->view('sidebar'); ?>
+    <?php $this->load->view('sidebar'); ?>
 
     <section id="widget" class="p-10 widget-section pd-top-120">
         <div class="container">
@@ -913,8 +875,7 @@
             </div>
 
             <div class="container-table row justify-content-center">
-                <a href="tambah_peminjaman_tempat"
-                    class="bg-green-500 hover:bg-green-700 ml-auto mr-3 w-32 text-white font-bold py-2 px-2 rounded">
+                <a href="tambah_peminjaman_tempat" class="bg-green-500 hover:bg-green-700 ml-auto mr-3 w-32 text-white font-bold py-2 px-2 rounded">
                     <span class="pe-2">
                         <i class="fas fa-plus"></i>
                     </span>
@@ -924,76 +885,93 @@
                     <div class="header-item">
                         <div class="relative">
 
-                            <table style="min-width: 22rem;" id="example_data"
-                                class="bak w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                <thead
-                                    class=" text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <table style="min-width: 22rem;" id="example_data" class="bak w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                <thead class=" text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
-                                        <th data-priority="1" scope="col" class="px-3 py-3">
+                                        <th data-priority="1" scope="col" class="px-4 py-3">
                                             No
                                         </th>
-                                        <th data-priority="1" scope="col" class="px-3 py-3">
-                                            Hari / Tanggal
+                                        <th data-priority="2" scope="col" class="px-4 py-3">
+                                            Nama
                                         </th>
-                                        <th data-priority="2" scope="col" class="px-3 py-3">
-                                            No Ruang
+
+                                        <th data-priority="4" scope="col" class="px-4 py-3">
+                                            Ruangan
                                         </th>
-                                        <th data-priority="3" scope="col" class="px-3 py-3">
-                                            Kapasitas
+
+                                        <th data-priority="6" scope="col" class="px-4 py-3">
+                                            Kode
                                         </th>
-                                        <th data-priority="4" scope="col" class="px-3 py-3">
-                                            Snack
+
+
+
+                                        <th data-priority="10" scope="col" class="px-4 py-3">
+                                            Hari Booking
                                         </th>
-                                        <th data-priority="5" scope="col" class="px-3 py-3">
-                                            Jam Penggunaan
+                                        <th data-priority="10" scope="col" class="px-4 py-3">
+                                            Total
                                         </th>
-                                        <th data-priority="7" scope="col" class="px-3 py-3">
-                                            Extra Waktu
+
+
+                                        <th data-priority="13" scope="col" class="px-4 py-3">
+                                            Status
                                         </th>
-                                        <th data-priority="6" scope="col" class="text-center px-3 py-3">
+                                        <th data-priority="14" scope="col" class="text-center px-4 py-3">
                                             Aksi
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <td data-cell="Nama Penyewa " scope="row"
-                                            class="px-3 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <tr class="bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700">
+                                        <td data-cell="Nama Penyewa " scope="row" class="px-3  py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             1
                                         </td>
-                                        <td data-cell="No Ruang " class="w-32 px-3 py-4">
-                                            Senin 07-11-23
+                                        <td data-cell="Nama " class=" px-4 py-3">
+                                            Sani Dahye
                                         </td>
-                                        <td data-cell="No Ruang " class="w-32 px-3 py-4">
-                                            R.303
-                                        </td>
-                                        <td data-cell="Kapasitas " class="w-36 px-3 py-4">
-                                            AC 3 PK 
-                                        </td>
-                                        <td data-cell="Kapasitas " class="w-32 px-3 py-4">
-                                            Tidak ada
-                                        </td>
-                                        <td data-cell="Jam Penggunaan " class="justify-content-center px-3 py-4">
-                                            12.00 - 13.30
-                                        </td>
-                                        <td data-cell="Exstra Waktu " class="px-3 py-4">
-                                            -
-                                        </td>
-                                        <td data-cell="Aksi" class="justify-content-center px-3 py-4 flex">
 
-                                            <a href="pelanggan/edit_peminjaman"
-                                                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-3 rounded">
+                                        <td data-cell="Ruangan " class=" px-4 py-3">
+                                            004
+                                        </td>
+
+                                        <td data-cell="Kode " class=" px-4 py-3">
+                                            65789
+                                        </td>
+
+
+
+                                        <td data-cell="Hari Booking " class="justify-content-center px-4 py-3">
+                                            09/11/2023 - 10/11/2023
+                                        </td>
+                                        <td data-cell="Total " class="justify-content-center px-4 py-3">
+                                            2.500.000
+                                        </td>
+
+
+                                        <td data-cell="Status " class="px-4 py-3">
+                                            Pending
+                                        </td>
+                                        <td data-cell="Aksi" class="justify-content-center px-4 py-3 flex">
+
+                                            <a href="pelanggan/edit_peminjaman" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-3 rounded">
                                                 <span class="">
                                                     <i class="fas fa-edit"></i>
                                                 </span>
-                                                
+
                                             </a>
-                                            <button onclick=""
-                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded ml-3">
+
+                                            <a href="pelanggan/edit_peminjaman" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-3  ml-3 rounded">
+                                                <span class="">
+                                                    <i class="fas fa-print"></i>
+                                                </span>
+
+                                            </a>
+
+                                            <button onclick="" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded ml-3">
                                                 <span class="">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </span>
-                                                
+
                                             </button>
                                         </td>
                                     </tr>
@@ -1017,11 +995,11 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             var table = $('#example_data').DataTable({
-                // responsive: true
-            })
+                    responsive: true
+                })
                 .columns.adjust()
                 .responsive.recalc();
         });

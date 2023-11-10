@@ -47,7 +47,7 @@
 
                             <div class="w-full px-7">
                                 <label for="foto" class="block">Foto Ruangan</label>
-                                <input type="file" name="foto" id="foto" class="w-full min-h-8 p-4 border-b-2 border-gray-300">
+                                <input type="file" name="foto" id="foto" class="w-full min-h-8 p-4 border-b-2 border-gray-300" value="<?php echo $ruangan->image; ?>">
                             </div>
 
                             <div class="w-full px-7">

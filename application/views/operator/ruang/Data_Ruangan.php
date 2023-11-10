@@ -14,45 +14,36 @@
 <style>
   .custom-swal-popup {
     background-color: #ffffff;
-    /* Latar belakang putih */
     color: #0074e4;
-    /* Teks biru */
   }
 
   .custom-swal-title {
     color: #0074e4;
-    /* Warna teks biru yang sama untuk judul */
   }
 
   .custom-swal-text {
     color: #333;
-    /* Warna teks abu-abu untuk konten teks */
   }
 
   .custom-swal-confirm-button {
     background-color: #0074e4;
-    /* Tombol konfirmasi dengan latar biru */
     color: #fff;
-    /* Warna teks putih */
   }
 
   .custom-swal-confirm-button:hover {
     background-color: #005abf;
-    /* Efek hover sedikit lebih gelap */
   }
 
   .custom-swal-cancel-button {
     background-color: #ff0000;
-    /* Tombol cancel dengan latar merah */
     color: #fff;
-    /* Warna teks putih */
   }
 
   .custom-swal-cancel-button:hover {
     background-color: #cc0000;
-    /* Efek hover sedikit lebih gelap */
   }
 </style>
+
 <body>
   <?php $this->load->view('sidebar'); ?>
   <!-- Área de contenido principal -->
@@ -78,7 +69,7 @@
               <div class="col-lg-4 col-md-6 max-w-md container bg-white rounded-xl shadow-lg transform transition duration-500 hover:scale-105">
                 <div class="bg-white pt-10 pb-10 pl-5 pr-5 mb-1 rounded-lg shadow-xl text-center my-5">
                   <img src="<?php echo (!empty($row->image) && file_exists('./image/ruangan/' . $row->image)) ? base_url('./image/ruangan/' . $row->image) : base_url('./image/foto.png'); ?>" alt="Room Image" class="block mx-auto mb-5 w-96 h-48 shadow-md rounded transition duration-100 cursor-pointer">
-                  <h2 class="text-2xl text-gray-800 font-semibold mb-3">Ruangan <?php echo $row->no_ruang; ?></h2>
+                  <h2 class="text-2xl text-gray-800 font-semibold mb-3"><?php echo format_ruangan($row->no_ruang); ?></h2>
                   <a class="inline-block px-3 py-1 font-semibold text-white bg-blue-500 rounded hover:bg-blue-600" onclick="showDetailConfirmation(event, '<?php echo base_url('operator/detail/' . $row->id); ?>')">Detail</a>
                   <a class="inline-block px-3 py-1 font-semibold text-white bg-black rounded hover-bg-black ml-3" onclick="showEditConfirmation(event, '<?php echo base_url('operator/edit_ruangan/' . $row->id); ?>')">Edit</a>
                 </div>
@@ -102,9 +93,10 @@
       var roomCards = roomList.getElementsByClassName("bg-white");
 
       for (var i = 0; i < roomCards.length; i++) {
-        var roomTitle = roomCards[i].querySelector("h2").textContent.toLowerCase();
+        var roomNumber = roomCards[i].querySelector(".room-number").textContent.toLowerCase();
+        var floorNumber = roomCards[i].querySelector(".floor-number").textContent.toLowerCase();
 
-        if (roomTitle.includes(searchInput)) {
+        if (roomNumber.includes(searchInput) || floorNumber.includes(searchInput)) {
           roomCards[i].style.display = "block";
         } else {
           roomCards[i].style.display = "none";
@@ -112,6 +104,7 @@
       }
     }
   </script>
+
 
   <script>
     function showAddConfirmation() {

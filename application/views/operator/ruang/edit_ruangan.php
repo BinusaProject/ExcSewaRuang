@@ -14,25 +14,26 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Pastikan jQuery dimuat sebelum kode JavaScript Anda -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
     <?php $this->load->view('sidebar'); ?>
     <div class="p-8 w-full md:w-cover flex justify-center items-center m-auto">
-    <div class="max-w-screen-xl w-full mx-auto">
-        <!-- Konten halaman Anda di sini -->
-        <main>
-            <div class="container mx-auto p-auto ml-auto w-10/12">
-                <header class="bg-white p-7 rounded-lg shadow-lg mb-8 relative">
-                    <div class="h-3 w-full absolute top-0 left-0 rounded-t-lg" style="background: #0C356A;"></div>
-                    <h1 id="title" class="text-4xl px-7 text-medium text-black-900">Edit Data Ruangan</h1>
-                </header>
+        <div class="max-w-screen-xl w-full mx-auto">
+            <!-- Konten halaman Anda di sini -->
+            <main>
+                <div class="container mx-auto p-auto ml-auto w-10/12">
+                    <header class="bg-white p-7 rounded-lg shadow-lg mb-8 relative">
+                        <div class="h-3 w-full absolute top-0 left-0 rounded-t-lg" style="background: #0C356A;"></div>
+                        <h1 id="title" class="text-4xl px-7 text-medium text-black-900">Edit Data Ruangan</h1>
+                    </header>
 
-                    <form action="<?php echo base_url('operator/aksi_edit_ruangan/' . $ruangan->id) ?>" method="post" id="edit-form" class="bg-white p-7 rounded-lg shadow-lg mb-8 text-lg" enctype="multipart/form-data">
+                    <form action="<?php echo base_url('operator/edit_ruangan/' . $ruangan->id) ?>" method="post" id="edit-form" class="bg-white p-7 rounded-lg shadow-lg mb-8 text-lg" enctype="multipart/form-data">
                         <div class="flex flex-wrap">
                             <div class="w-full px-7">
                                 <label for="no_lantai" class="block">Nomor Lantai</label>
-                                <input type="number" name="no_lantai" id="no_lantai" class="w-full min-h-8 p-4 border-b-2 border-gray-300" value="<?php echo $ruangan->no_lantai; ?>">
+                                <input type="text" name="no_lantai" id="no_lantai" class="w-full min-h-8 p-4 border-b-2 border-gray-300" value="<?php echo $ruangan->no_lantai; ?>">
                             </div>
 
                             <div class="w-full px-7">
@@ -47,7 +48,7 @@
 
                             <div class="w-full px-7">
                                 <label for="foto" class="block">Foto Ruangan</label>
-                                <input type="file" name="foto" id="foto" class="w-full min-h-8 p-4 border-b-2 border-gray-300" value="<?php echo $ruangan->image; ?>">
+                                <input type="file" name="foto" id="foto" class="w-full min-h-8 p-4 border-b-2 border-gray-300">
                             </div>
 
                             <div class="w-full px-7">
@@ -60,7 +61,7 @@
                         <input type="hidden" name="id" id="room_id" value="<?php echo $ruangan->id; ?>">
 
                         <div class="text-center mt-10">
-                            <input type="submit" id="submit" style="border-radius: 10px;" class="inline-block font-semibold text-white text-lg py-2 px-8 bg-blue-500 hover:bg-blue-600" value="Ubah">
+                            <input type="submit" id="triggerSweetAlertBtn" style="border-radius: 10px;" class="inline-block font-semibold text-white text-lg py-2 px-8 bg-blue-500 hover:bg-blue-600" value="Ubah">
                             <form action="<?php echo base_url('operator/hapus_image/' . $ruangan->id) ?>" method="post" id="edit-form" class="bg-white p-7 rounded-lg shadow-lg mb-8 text-lg" enctype="multipart/form-data">
                                 <input type="button" id="submitt" style="border-radius: 10px;" class="inline-block font-semibold text-white text-lg py-2 px-8 bg-black hover:bg-black" value="Hapus Gambar" onclick="deleteImage('<?= $ruangan->id ?>')">
                             </form>
@@ -121,52 +122,26 @@
             });
         }
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        $(document).ready(function() {
-            const form = document.getElementById("edit-form");
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-            form.addEventListener("submit", function(e) {
-                e.preventDefault();
+            // Simulate a response from the controller (replace this with the actual response data)
+            var exampleResponse = {
+                status: 'success',
+                message: 'This is a success message.',
+                redirect: 'operator',
+            };
 
-                if (e.submitter.id === "submit") {
-                    document.getElementById("submit").disabled = true;
-
-                    const id = $("#room_id").val();
-                    const formData = new FormData(this);
-
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo base_url('operator/aksi_edit_ruangan/' . $ruangan->id) ?>",
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        dataType: "json",
-                        success: function(response) {
-                            if (response.status === 'success') {
-                                Swal.fire({
-                                    title: 'Sukses',
-                                    text: response.message,
-                                    icon: 'success',
-                                }).then(function() {
-                                    // Redirect ke URL tujuan setelah berhasil
-                                    window.location.href = response.redirect;
-                                });
-                            } else if (response.status === 'error') {
-                                Swal.fire({
-                                    title: 'Gagal',
-                                    text: response.message,
-                                    icon: 'error',
-                                });
-                            }
-
-                            document.getElementById("submit").disabled = false;
-                        }
-                    });
-                }
-            });
+            // Trigger the handleResponse function with the example response
+            handleResponse(exampleResponse);
         });
+
+        function handleResponse(response) {
+            // Your existing handleResponse function
+            // ...
+        }
     </script>
 
 </body>

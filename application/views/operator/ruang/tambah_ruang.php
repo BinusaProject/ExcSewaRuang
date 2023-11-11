@@ -105,6 +105,20 @@
 
                                 document.getElementById("submit").disabled = false;
                             }
+                        },
+                        error: function(xhr, textStatus, errorThrown) {
+                            // Handle AJAX error
+                            var errorMessage = 'Terjadi kesalahan saat mengirim data.';
+                            if (xhr.responseJSON && xhr.responseJSON.message) {
+                                errorMessage = xhr.responseJSON.message;
+                            }
+                            Swal.fire({
+                                title: 'Gagal',
+                                text: errorMessage,
+                                icon: 'error'
+                            });
+
+                            document.getElementById("submit").disabled = false;
                         }
                     });
                 }

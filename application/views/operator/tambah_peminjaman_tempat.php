@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sewa Ruang</title>
+
     <!-- cdn fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@12.11.5/dist/sweetalert2.min.css">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
@@ -224,38 +221,38 @@
             </header>
 
             <form action="" method="post" id="survey-form" class="survey-form">
-                <label for="nama" id="name-label">Nama Penyewa<span class="required">*</span></label>
+                <label for="nama" id="name-label">Nama <span class="required">*</span></label>
                 <input type="text" name="nama" id="nama" class="nama" placeholder="Ketik nama penyewa" required>
 
-                <label for="hari" id="name-label">Hari<span class="required">*</span></label>
-                <input type="text" name="hari" id="hari" class="hari" placeholder="Ketik hari pemesanan" required>
-
                 <label for="no_lantai" id="name-label">No Lantai<span class="required">*</span></label>
-                <input class="no_lantai" autocomplete="off" role="combobox" list="" id="input" name="no_lantai" placeholder="Pilih no lantai">
+                <input class="no_lantai" autocomplete="off" role="combobox" list="" id="input" name="no_lantai"
+                    placeholder="Pilih no lantai">
 
                 <datalist id="browsers" role="listbox">
                     <option value="001">001</option>
                     <option value="002">002</option>
                     <option value="003">003</option>
                     <option value="004">004</option>
-                    <option value="004">004</option>
-                    <option value="004">004</option>
-                    <option value="004">004</option>
-                    <option value="004">004</option>
-                    <option value="004">004</option>
-                    <option value="004">004</option>
-                    <option value="004">004</option>
-                    <option value="004">004</option>
+                    <option value="005">005</option>
                 </datalist>
 
                 <label for="no_ruang" id="name-label">No Ruang<span class="required">*</span></label>
-                <input type="" name="no_ruang" id="no_ruang" class="no_ruang" placeholder="Ketik no ruang" required>
+                <input class="no_ruang" autocomplete="off" role="combobox" list="" id="input1" name="no_ruang"
+                    placeholder="Pilih no lantai">
+                <datalist id="browsers1" role="listbox">
+                    <option value="001">001</option>
+                    <option value="002">002</option>
+                    <option value="003">003</option>
+                    <option value="004">004</option>
+                </datalist>
 
                 <label for="kapasitas" id="kapasitas-label">Kapasitas<span class="required">*</span></label>
-                <input type="kapasitas" name="kapasitas" id="kapasitas" class="kapasitas" placeholder="Ketik kapasitas ruangan" required>
+                <input type="kapasitas" name="kapasitas" id="kapasitas" class="kapasitas"
+                    placeholder="Ketik kapasitas ruangan" required>
 
                 <label for="snack" id="snack-label">Snack<span class="required">*</span></label>
-                <select id="underline_select" class="snack block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <select id="underline_select"
+                    class="snack block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                     <option selected>Pilih Paket Snack</option>
                     <option value="US">Paket 1</option>
                     <option value="CA">Paket 2</option>
@@ -264,38 +261,43 @@
 
 
                 <label for="extra_time" id="extra_time-label">Extra Time<span class="required">*</span></label>
-                <input type="extra_time" name="extra_time" id="extra_time" class="extra_time" placeholder="Ketik extra time jika ada" required>
+                <input type="extra_time" name="extra_time" id="extra_time" class="extra_time"
+                    placeholder="Ketik extra time jika ada" required>
 
                 <!-- <label for="jam_penggunaan" id="jam_penggunaan-label">Jam Penggunaan<span
                         class="required">*</span></label>
                 <input type="jam_penggunaan" name="jam_penggunaan" id="jam_penggunaan" class="jam_penggunaan"
                     placeholder="Ketik jam penggunaan" required> -->
 
-                <label for="total_booking" id="total_booking-label">Booking Dari Tanggal<span class="required">*</span></label>
-                <input type="date" name="total_booking" id="total_booking" class="total_booking" placeholder="Ketik total hari booking" required>
-                <label for="total_booking" id="total_booking-label">Booking Sampai Tanggal<span class="required">*</span></label>
-                <input type="date" name="total_booking" id="total_booking" class="total_booking" placeholder="Ketik total hari booking" required>
+                <label for="total_booking" id="total_booking-label">Booking Dari Tanggal<span
+                        class="required">*</span></label>
+                <input type="date" name="total_booking" id="total_booking" class="total_booking"
+                    placeholder="Ketik total hari booking" required>
+                <label for="total_booking" id="total_booking-label">Booking Sampai Tanggal<span
+                        class="required">*</span></label>
+                <input type="date" name="total_booking" id="total_booking" class="total_booking"
+                    placeholder="Ketik total hari booking" required>
 
                 <input type="submit" id="submit" class="submit" value="Submit">
             </form>
         </div>
     </main>
 
-    <!-- script comboboxs -->
+    <!-- script comboboxs no lantai -->
     <script>
-        input.onfocus = function() {
+        input.onfocus = function () {
             browsers.style.display = 'block';
             input.style.borderRadius = "5px 5px 0 0";
         };
         for (let option of browsers.options) {
-            option.onclick = function() {
+            option.onclick = function () {
                 input.value = option.value;
                 browsers.style.display = 'none';
                 input.style.borderRadius = "5px";
             }
         };
 
-        input.oninput = function() {
+        input.oninput = function () {
             currentFocus = -1;
             var text = input.value.toUpperCase();
             for (let option of browsers.options) {
@@ -307,14 +309,16 @@
             };
         }
         var currentFocus = -1;
-        input.onkeydown = function(e) {
+        input.onkeydown = function (e) {
             if (e.keyCode == 40) {
                 currentFocus++
                 addActive(browsers.options);
-            } else if (e.keyCode == 38) {
+            }
+            else if (e.keyCode == 38) {
                 currentFocus--
                 addActive(browsers.options);
-            } else if (e.keyCode == 13) {
+            }
+            else if (e.keyCode == 13) {
                 e.preventDefault();
                 if (currentFocus > -1) {
                     /*and simulate a click on the "active" item:*/
@@ -337,36 +341,76 @@
         }
     </script>
 
+    <!-- script comboboxs no ruang -->
+    <script>
+        input1.onfocus = function () {
+            browsers1.style.display = 'block';
+            input1.style.borderRadius = "5px 5px 0 0";
+        };
+        for (let option of browsers1.options) {
+            option.onclick = function () {
+                input1.value = option.value;
+                browsers1.style.display = 'none';
+                input1.style.borderRadius = "5px";
+            }
+        };
+
+        input1.oninput = function () {
+            currentFocus = -1;
+            var text = input1.value.toUpperCase();
+            for (let option of browsers1.options) {
+                if (option.value.toUpperCase().indexOf(text) > -1) {
+                    option.style.display = "block";
+                } else {
+                    option.style.display = "none";
+                }
+            };
+        }
+        var currentFocus = -1;
+        input1.onkeydown = function (e) {
+            if (e.keyCode == 40) {
+                currentFocus++
+                addActive(browsers1.options);
+            }
+            else if (e.keyCode == 38) {
+                currentFocus--
+                addActive(browsers1.options);
+            }
+            else if (e.keyCode == 13) {
+                e.preventDefault();
+                if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (browsers1.options) browsers1.options[currentFocus].click();
+                }
+            }
+        }
+
+        function addActive(x) {
+            if (!x) return false;
+            removeActive(x);
+            if (currentFocus >= x.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = (x.length - 1);
+            x[currentFocus].classList.add("active");
+        }
+        function removeActive(x) {
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("active");
+            }
+        }
+    </script>
+
     <!-- script disable -->
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Menangkap perubahan pada input di atasnya
-            $('#input').on('input', function() {
+            $('#input').on('input', function () {
                 // Mengaktifkan atau menonaktifkan input berdasarkan kondisi
                 $('#no_ruang').prop('disabled', !$(this).val());
             });
         });
     </script>
+
 </body>
-<script type="text/javascript">
-    function togglePassword() {
-        var passwordField = document.getElementById('password');
-        var passwordToggle = document.querySelector('.password-toggle');
-
-        if (passwordField.type === "password") {
-            passwordField.type = "text";
-            passwordToggle.classList.remove('fa-eye-slash');
-            passwordToggle.classList.add('fa-eye');
-
-
-        } else {
-            passwordField.type = "password";
-            passwordToggle.classList.add('fa-eye-slash');
-            passwordToggle.classList.remove('fa-eye');
-
-        }
-    }
-</script>
 
 </html>

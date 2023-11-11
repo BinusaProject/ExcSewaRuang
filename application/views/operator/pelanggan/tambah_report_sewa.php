@@ -54,6 +54,10 @@
             position: relative;
         }
 
+        .responsive-3{
+            width: 100%;
+        }
+
         .survey-form {
             font-size: 15px;
         }

@@ -18,24 +18,12 @@
             box-sizing: border-box;
         }
 
-        /* 
-        html {
-            font-size: 62.5%;
-        } */
-
         body {
             font-family: "DM Sans", sans-serif;
-            /* font-size: 1.6rem; */
             background-color: #E4F1FF;
             color: #222;
             padding: 0 0px;
         }
-
-        /* .container {
-            min-width: 20rem;
-            max-width: 65rem;
-            margin: 4rem auto;
-        } */
 
         .heading,
         .survey-form {

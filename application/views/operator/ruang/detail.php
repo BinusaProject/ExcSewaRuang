@@ -42,7 +42,6 @@
     <!-- Rest of your script code -->
   </div>
 
-
   <script>
     // Gráfica de Usuarios
     var usersChart = new Chart(document.getElementById('usersChart'), {

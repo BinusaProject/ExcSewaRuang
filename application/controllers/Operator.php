@@ -156,7 +156,6 @@ class operator extends CI_Controller
         $image = $_FILES['foto']['name'];
         $foto_temp = $_FILES['foto']['tmp_name'];
 
-        // Inisialisasi pesan respons
         $response = [
             'status' => 'error', // Default status error
             'message' => 'Terjadi kesalahan saat mengubah ruangan.', // Default pesan error

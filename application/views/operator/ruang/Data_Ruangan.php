@@ -14,33 +14,43 @@
 <style>
   .custom-swal-popup {
     background-color: #ffffff;
+    /* Latar belakang putih */
     color: #0074e4;
+    /* Teks biru */
   }
 
   .custom-swal-title {
     color: #0074e4;
+    /* Warna teks biru yang sama untuk judul */
   }
 
   .custom-swal-text {
     color: #333;
+    /* Warna teks abu-abu untuk konten teks */
   }
 
   .custom-swal-confirm-button {
     background-color: #0074e4;
+    /* Tombol konfirmasi dengan latar biru */
     color: #fff;
+    /* Warna teks putih */
   }
 
   .custom-swal-confirm-button:hover {
     background-color: #005abf;
+    /* Efek hover sedikit lebih gelap */
   }
 
   .custom-swal-cancel-button {
     background-color: #ff0000;
+    /* Tombol cancel dengan latar merah */
     color: #fff;
+    /* Warna teks putih */
   }
 
   .custom-swal-cancel-button:hover {
     background-color: #cc0000;
+    /* Efek hover sedikit lebih gelap */
   }
 </style>
 
@@ -48,7 +58,7 @@
   <?php $this->load->view('sidebar'); ?>
   <!-- Área de contenido principal -->
   <div class="flex-1 p-4 w-full">
-    <div class="relative w-full p-2 border border-blue-300 rounded shadow-lg">
+    <div class="relative w-full p-2 border bg-gray-300 border-blue-300 rounded shadow-lg">
       <h1 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white flex items-center">
         Cari <i class="fas fa-search text-lg ml-2"></i>
         <a href="javascript:void(0);" class="ml-auto inline-block px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold text-base rounded shadow-md transition duration-300 ease-in-out transform hover:scale-105" onclick="showAddConfirmation()">
@@ -93,10 +103,9 @@
       var roomCards = roomList.getElementsByClassName("bg-white");
 
       for (var i = 0; i < roomCards.length; i++) {
-        var roomNumber = roomCards[i].querySelector(".room-number").textContent.toLowerCase();
-        var floorNumber = roomCards[i].querySelector(".floor-number").textContent.toLowerCase();
+        var roomTitle = roomCards[i].querySelector("h2").textContent.toLowerCase();
 
-        if (roomNumber.includes(searchInput) || floorNumber.includes(searchInput)) {
+        if (roomTitle.includes(searchInput)) {
           roomCards[i].style.display = "block";
         } else {
           roomCards[i].style.display = "none";
@@ -104,7 +113,6 @@
       }
     }
   </script>
-
 
   <script>
     function showAddConfirmation() {

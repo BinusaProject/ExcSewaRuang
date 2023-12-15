@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sewa Ruang</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-
     <style>
         * {
             margin: 0px;
@@ -262,19 +259,15 @@
 
                     <form action="<?php echo base_url('auth/aksi_login') ?>" method="post">
                         <div class="inputContainer">
-                            <label class="label header-text" for="emailAddress"><img
-                                    src="https://i.imgur.com/Hn13wvm.png" class="labelIcon"><span>Email
+                            <label class="label header-text" for="emailAddress"><img src="https://i.imgur.com/Hn13wvm.png" class="labelIcon"><span>Email
                                 </span></label>
-                            <input required type="email" name="email" autocomplete="off" class="input" id="emailAddress"
-                                placeholder="Enter your Email Address">
+                            <input required type="email" name="email" autocomplete="off" class="input" id="emailAddress" placeholder="Enter your Email Address">
                         </div>
                         <div class="inputContainer">
                             <label class="label header-text" for="emailAddress">
-                                <img src="https://i.imgur.com/g5SvdfG.png"
-                                    class="labelIcon"><span>Password</span></label>
+                                <img src="https://i.imgur.com/g5SvdfG.png" class="labelIcon"><span>Password</span></label>
                             <div class="password-input-container">
-                                <input required type="password" name="password" class="input" id="password"
-                                    placeholder="Enter your Password">
+                                <input required type="password" name="password" class="input" id="password" placeholder="Enter your Password">
                                 <i class="password-toggle-login fa fa-eye-slash" onclick="togglePassword()"></i>
                             </div>
                         </div>
@@ -303,7 +296,7 @@
     <?php } ?>
 
 
-    <?php if ($this->session->flashdata('error')): ?>
+    <?php if ($this->session->flashdata('error')) : ?>
         // Tampilkan SweetAlert jika terdapat error dari session
         Swal.fire({
             icon: 'error',
@@ -319,7 +312,7 @@
         });
     <?php endif; ?>
 
-    <?php if ($this->session->flashdata('success')): ?>
+    <?php if ($this->session->flashdata('success')) : ?>
         // Tampilkan SweetAlert jika login berhasil
         Swal.fire({
             icon: 'success',
@@ -350,10 +343,9 @@
     }
 
     // Memanggil fungsi saat halaman siap
-    window.onload = function () {
+    window.onload = function() {
         displaySweetAlert();
     };
-
 </script>
 <script type="text/javascript">
     function togglePassword() {

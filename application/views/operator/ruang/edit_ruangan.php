@@ -498,7 +498,7 @@
                 </div>
                 <div class="flex justify-center items-center space-x-4">
                     <form action="<?php echo base_url('operator/hapus_image/' . $ruangan->id) ?>" method="post" id="edit-form" class="bg-white p-4 rounded-lg shadow-lg text-lg" enctype="multipart/form-data">
-                    <input type="submit" id="submit" class="submit " value="Submit">
+                        <input type="submit" id="submit" class="submit " value="Submit">
                         <input type="button" id="submitt" style="border-radius: 10px;" class="hapus_gambar" value="Hapus Foto" onclick="deleteImage('<?= $ruangan->id ?>')">
                     </form>
                 </div>

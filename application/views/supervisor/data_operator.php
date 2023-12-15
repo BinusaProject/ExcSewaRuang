@@ -9,8 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
-
-
     <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
     <!--Replace with your tailwind.css once created-->
 
@@ -21,7 +19,6 @@
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--Responsive Extension Datatables CSS-->
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-
     <style>
         @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
@@ -222,24 +219,6 @@
             visibility: visible;
         }
 
-        /* .back-to-top {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  width: 44px;
-  height: 44px;
-  color: #fff;
-  background-color: var(--main-color);
-  text-align: center;
-  line-height: 44px;
-  z-index: 99;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  display: none;
-  animation: backto-top-bounce 4s infinite ease-in-out;
-  border-radius: 4px;
-} */
         @keyframes backto-top-bounce {
             0% {
                 transform: translateY(-5px);

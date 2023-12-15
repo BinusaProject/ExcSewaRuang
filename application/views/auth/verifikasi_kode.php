@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sewa Ruang</title>
-
     <!-- cdn fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
 
@@ -140,11 +138,9 @@
                 <h1 id="title" class="main-heading">Verifikasi Kode</h1>
             </header>
 
-            <form action="<?php echo base_url('auth/aksi_verifikasi')?>" method="post" id="survey-form"
-                class="survey-form">
+            <form action="<?php echo base_url('auth/aksi_verifikasi') ?>" method="post" id="survey-form" class="survey-form">
                 <p>Silahkan masukkan code verifikasi anda untuk mengubah password </p>
-                <input autocomplete="off" type="number" name="code" id="email" class="email" placeholder="Masukkan code verifikasi anda"
-                    required>
+                <input autocomplete="off" type="number" name="code" id="email" class="email" placeholder="Masukkan code verifikasi anda" required>
 
 
                 <input type="submit" id="submit" class="submit" value="Submit">
@@ -154,7 +150,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-    <?php if ($this->session->flashdata('success_forgot')): ?>
+    <?php if ($this->session->flashdata('success_forgot')) : ?>
         Swal.fire({
             icon: 'success',
             title: 'Pesan Terkirim!',

@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sewa Ruang</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
     <style>
         * {
             margin: 0px;
@@ -83,6 +80,7 @@
             margin-top: 5px;
             margin-bottom: 40px;
         }
+
         .subArteris {
             color: red;
             font-size: 14px;
@@ -249,7 +247,7 @@
         }
     </style>
 
-    
+
 </head>
 
 <body>
@@ -276,9 +274,9 @@
                                 </span></label>
                             <input autocomplete="off" type="email" name="email" class="input" id="emailAddress" placeholder="Enter your Email Address">
                         </div>
-                         <div class="inputContainer">
+                        <div class="inputContainer">
                             <label class="label header-text" for="emailAddress">
-                            <img src="https://i.imgur.com/g5SvdfG.png" class="labelIcon"><span>Password</span></label>
+                                <img src="https://i.imgur.com/g5SvdfG.png" class="labelIcon"><span>Password</span></label>
                             <div class="password-input-container">
                                 <input type="password" name="password" class="input" id="password" placeholder="Enter your Password">
                                 <i class="password-toggle-login fa fa-eye-slash" onclick="togglePassword()"></i>
@@ -305,7 +303,7 @@
             showConfirmButton: false,
             timerProgressBar: true
         });
-<?php endif; ?>
+    <?php endif; ?>
 
 
     function togglePassword() {

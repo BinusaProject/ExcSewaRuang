@@ -1802,8 +1802,8 @@
                     </div>
         </section>
         <section class="inner-section">
-            <div class="row justify-content-center shadow-lg mb-5 bg-body-tertiary rounded w-full">
-                <div class="col-lg-3 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
                     <div class="section-title">
                         <h2 class="title">Data Ruang</h2>
                     </div>
@@ -1846,8 +1846,8 @@
         <!-- Data Master Pelanggan -->
         <section id="widget" class="inner-section">
             <div class="container">
-                <div class="row justify-content-center shadow-lg mb-5 bg-body-tertiary rounded w-full">
-                    <div class="col-lg-3 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
                         <div class="section-title">
                             <h2 class="title">Data Pelanggan</h2>
                         </div>
@@ -1907,8 +1907,8 @@
         <!-- Report Sewa -->
         <section id="widget" class="inner-section">
             <div class="container">
-                <div class="row justify-content-center shadow-lg mb-5 bg-body-tertiary rounded w-full">
-                    <div class="col-lg-3 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
                         <div class="section-title">
                             <h2 class="title">Report Sewa</h2>
                         </div>
@@ -2001,8 +2001,6 @@
             </div>
 
         </div>
-        <!-- footer area end -->
-
         <!-- back-to-top end -->
         <a id="back-to-top"></a>
 

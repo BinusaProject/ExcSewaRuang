@@ -57,7 +57,7 @@
             margin-left: 50%;
         }
 
-        git  {
+        git {
             margin: 0;
             margin-left: 5%;
             font-size: 100%;

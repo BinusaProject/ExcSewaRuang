@@ -95,6 +95,7 @@
             margin: 2rem 0;
             font-size: 1.6rem;
         }
+
         .subArteris {
             color: red;
             font-size: 14px;
@@ -176,21 +177,23 @@
             .form-group {
                 position: relative;
             }
+
             .password-toggle-baru {
                 position: absolute;
-            top: 50%;
-            right: 10px;
-            /* Menyesuaikan posisi ikon ke kanan */
-            transform: translateY(-50%);
-            cursor: pointer;
+                top: 50%;
+                right: 10px;
+                /* Menyesuaikan posisi ikon ke kanan */
+                transform: translateY(-50%);
+                cursor: pointer;
             }
+
             .password-toggle-konfirmasi {
                 position: absolute;
-            top: 50%;
-            right: 10px;
-            /* Menyesuaikan posisi ikon ke kanan */
-            transform: translateY(-50%);
-            cursor: pointer;
+                top: 50%;
+                right: 10px;
+                /* Menyesuaikan posisi ikon ke kanan */
+                transform: translateY(-50%);
+                cursor: pointer;
             }
         }
 
@@ -200,6 +203,7 @@
             .form-group {
                 position: relative;
             }
+
             .password-toggle-baru {
                 position: absolute;
                 top: 38%;
@@ -207,6 +211,7 @@
                 right: 31rem;
                 cursor: pointer;
             }
+
             .password-toggle-konfirmasi {
                 position: absolute;
                 top: 52%;
@@ -215,8 +220,6 @@
                 cursor: pointer;
             }
         }
-        
-        
     </style>
 </head>
 
@@ -228,22 +231,19 @@
                 <h1 id="title" class="main-heading">Ubah Password</h1>
             </header>
 
-            <form action="<?php echo base_url('auth/aksi_ganti_password')?>" method="post" id="survey-form"
-                class="survey-form">
+            <form action="<?php echo base_url('auth/aksi_ganti_password') ?>" method="post" id="survey-form" class="survey-form">
                 <!-- <p>Silahkan masukkan password baru kamu untuk</p> -->
                 <div class="inputContainer">
                     <label class="label" for="emailAddress"><span><strong>Password Baru</strong></span></label>
                     <div class="password-input-container">
-                        <input type="password" name="password" class="password_baru" id="password_baru"
-                            placeholder="Masukkan Password Baru">
+                        <input type="password" name="password" class="password_baru" id="password_baru" placeholder="Masukkan Password Baru">
                         <i class="password-toggle-baru fa fa-eye-slash" onclick="togglePassword_baru()"></i>
                     </div>
                 </div>
                 <div class="inputContainer">
                     <label class="label" for="emailAddress"><span><strong>Konfirmasi Password</strong></span></label>
                     <div class="password-input-container">
-                        <input type="password" name="con_password" class="password_konfirmasi" id="password_konfirmasi"
-                            placeholder="Masukkan Konfirmasi Password">
+                        <input type="password" name="con_password" class="password_konfirmasi" id="password_konfirmasi" placeholder="Masukkan Konfirmasi Password">
                         <i class="password-toggle-konfirmasi fa fa-eye-slash" onclick="togglePassword_konfirmasi()"></i>
                     </div>
                 </div>
@@ -257,7 +257,6 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-
     <?php if ($this->session->flashdata('error')) { ?>
         Swal.fire({
             icon: 'error',
@@ -267,19 +266,18 @@
             window.location.href = '<?php echo base_url('auth/ganti_password'); ?>';
         });
     <?php } ?>
-    
-    <?php if ($this->session->flashdata('success_code')) { ?>
-    Swal.fire({
-        icon: 'success',
-        title: 'Verifikasi Berhasil!',
-        text: '<?php echo $this->session->flashdata('success'); ?>',
-        showConfirmButton: false,
-        timer: 2500
-    }).then(() => {
-        window.location.href = '<?php echo base_url('auth/ganti_password'); ?>';
-    });
-<?php } ?>
 
+    <?php if ($this->session->flashdata('success_code')) { ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Verifikasi Berhasil!',
+            text: '<?php echo $this->session->flashdata('success'); ?>',
+            showConfirmButton: false,
+            timer: 2500
+        }).then(() => {
+            window.location.href = '<?php echo base_url('auth/ganti_password'); ?>';
+        });
+    <?php } ?>
 </script>
 
 <script type="text/javascript">
@@ -297,7 +295,7 @@
             passwordToggle.classList.add('fa-eye-slash');
         }
     }
-  
+
 
     function togglePassword_konfirmasi() {
         var passwordField = document.getElementById('password_konfirmasi');
